@@ -22,8 +22,7 @@ public class SearchRoomTest extends BaseTest {
 	public void checkResultOfSearch() {
 
 		int roomsAreFound = steps.getListOfAccomodaion();
-		System.out.println(roomsAreFound);
-		//Assert.assertTrue(roomsAreFound != 0);
+		Assert.assertTrue(roomsAreFound > 0);
 	}
 
 }

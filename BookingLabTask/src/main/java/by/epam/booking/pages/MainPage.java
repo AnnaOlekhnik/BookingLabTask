@@ -15,8 +15,6 @@ public class MainPage extends AbstractPage {
 
 	private static final String BASE_URL = "https://booking.com";
 
-	@FindBy(xpath = "//*[@id=\"b_tt_holder_2\"]/div/span")
-	private WebElement login;
 
 	@FindBy(xpath = "//*[@id='ss']")
 	private WebElement destinationField;
@@ -25,11 +23,8 @@ public class MainPage extends AbstractPage {
 	private WebElement dateField;
 
 	@FindBy(xpath = "//td[@class='c2-day c2-day-s-weekend']")
-	// @FindBy(xpath = "//span[@class='c2-day-inner' and contains (text(), '14')]")
 	private WebElement checkInDate;
 
-	// @FindBy(xpath = "//td[@class='c2-day c2-day-s-weekend c2-day-s-in-range
-	// c2-day-s-last-in-range']")
 	@FindBy(xpath = "//span[@class='c2-day-inner' and contains (text(), '16')]")
 	private WebElement checkOutDate;
 
@@ -91,11 +86,10 @@ public class MainPage extends AbstractPage {
 
 	}
 
-	public int checkResultsOfSearch() {
+	public List <WebElement> checkResultsOfSearch() {
 
-		int numberOfResults = resultOfSearch.size();
+		return resultOfSearch;
 
-		return numberOfResults;
 	}
 
 }

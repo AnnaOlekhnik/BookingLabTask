@@ -1,6 +1,9 @@
 package by.epam.booking.steps;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import by.epam.booking.pages.MainPage;
 
@@ -31,9 +34,9 @@ public class Steps {
 	public int getListOfAccomodaion() {
 		
 		mainPage= new MainPage(driver);
-		int numberOfResults = mainPage.checkResultsOfSearch();
+		List <WebElement> results = mainPage.checkResultsOfSearch();
 		
-		return numberOfResults;
+		return results.size();
 	}
 
 }
