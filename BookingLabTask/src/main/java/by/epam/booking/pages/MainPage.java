@@ -2,19 +2,14 @@ package by.epam.booking.pages;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage extends AbstractPage {
 
 	private static final String BASE_URL = "https://booking.com";
-
 
 	@FindBy(xpath = "//*[@id='ss']")
 	private WebElement destinationField;
@@ -40,7 +35,6 @@ public class MainPage extends AbstractPage {
 	@FindBy(xpath = "//*[@id='hotellist_inner']/div")
 	private List<WebElement> resultOfSearch;
 
-
 	public MainPage(WebDriver driver) {
 		super(driver);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -56,7 +50,6 @@ public class MainPage extends AbstractPage {
 
 		destinationField.click();
 		destinationField.sendKeys("Minsk");
-
 	}
 
 	public void setDates() {
@@ -83,13 +76,6 @@ public class MainPage extends AbstractPage {
 	public void startSearch() {
 
 		searchButton.click();
-
-	}
-
-	public List <WebElement> checkResultsOfSearch() {
-
-		return resultOfSearch;
-
 	}
 
 }
